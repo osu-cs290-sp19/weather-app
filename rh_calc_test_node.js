@@ -1,4 +1,6 @@
 /*
+Commented out this file for now. Should be able to connect to the data store from App.js
+
 var rh = require('./src/rh_calc.js');
 var fs = require('fs');
 
