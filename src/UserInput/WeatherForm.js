@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+/*
+This whole function is a react component named WeatherForm.
+*/
 function WeatherForm({getRH}) {
-    const [dryBulb, setDry] = useState(""); //sets the initial state for dry state
-    const [wetBulb, setWet] = useState(""); //sets the initial state for wet state
-    const [elevate, setElevate] = useState(""); //sets the initial elevation state
+    const [dryBulb, setDry] = useState(""); //sets the initial state for dry bulb
+    const [wetBulb, setWet] = useState(""); //sets the initial state for wet bulb
+    const [elevate, setElevate] = useState(""); //sets the initial elevation 
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -16,12 +19,11 @@ function WeatherForm({getRH}) {
         };
         //send new item values to addItem func in Item.js
         getRH(dryBulb, wetBulb, elevate);
-        //reset the values in the form to empty
-        // setDry("");
-        // setWet("");
-        // setElevate("");
     };
 
+    /*
+    When input field is clicked, set state to empty.
+    */
     const clearDry = e => {
         setDry("");
     };
@@ -32,6 +34,9 @@ function WeatherForm({getRH}) {
         setElevate("");
     };
 
+    /*
+    This is the returned XML (not HTML but similar language)
+    */
     return (
             <form onSubmit={handleSubmit} className="form-inline">
 			<input
@@ -66,4 +71,4 @@ function WeatherForm({getRH}) {
     );
 }
 
-export default WeatherForm;
+export default WeatherForm; //export component to be used in other files
