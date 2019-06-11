@@ -1,4 +1,5 @@
-var rh = require('./rh_calc.js');
+/*
+var rh = require('./src/rh_calc.js');
 var fs = require('fs');
 
 var rhData = fs.readFileSync('rh1400.json');
@@ -13,3 +14,4 @@ var testVal = rh.rhCalc(61, 40, 1500, parsedRhData1400, parsedRhData5000);
 
 //console.log(parsedRhData5000.rh5000[101]);
 console.log(testVal);
+*/
