@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 /*
 This whole function is a react component named WeatherForm.
 */
-function WeatherForm({getRH}) {
+function WeatherForm({ getRH }) {
     const [dryBulb, setDry] = useState(""); //sets the initial state for dry bulb
     const [wetBulb, setWet] = useState(""); //sets the initial state for wet bulb
     const [elevate, setElevate] = useState(""); //sets the initial elevation 
@@ -39,35 +39,41 @@ function WeatherForm({getRH}) {
     */
     return (
             <form onSubmit={handleSubmit} className="form-inline">
-			<input
-				type="number"
-				step="1"
-                className="input"
-                onFocus={e => clearDry(e.target.value)}
-				value={dryBulb}
-				onChange={e => setDry(e.target.value)}
-				placeholder="Dry Bulb..."
-			/>
-            <input
-				type="number"
-				step="1"
-                className="input"
-                onFocus={e => clearWet(e.target.value)}
-				value={wetBulb}
-				onChange={e => setWet(e.target.value)}
-				placeholder="Wet Bulb..."
-			/>
-            <input
-				type="number"
-				step="1"
-                className="input"
-                onFocus={e => clearElevate(e.target.value)}
-				value={elevate}
-				onChange={e => setElevate(e.target.value)}
-				placeholder="Elevation..."
-			/>
-			<input type="submit" value="Submit" />
-		</form>
+                <div className="form-group">
+                <input
+                    type="number"
+                    step="1"
+                    className="form-control"
+                    onFocus={e => clearDry(e.target.value)}
+                    value={dryBulb}
+                    onChange={e => setDry(e.target.value)}
+                    placeholder="Dry Bulb..."
+                />
+                </div>
+                <div className="form-group">
+                <input
+                    type="number"
+                    step="1"
+                    className="form-control"
+                    onFocus={e => clearWet(e.target.value)}
+                    value={wetBulb}
+                    onChange={e => setWet(e.target.value)}
+                    placeholder="Wet Bulb..."
+                />
+                </div>
+                <div className="form-group">
+                <input
+                    type="number"
+                    step="1"
+                    className="form-control"
+                    onFocus={e => clearElevate(e.target.value)}
+                    value={elevate}
+                    onChange={e => setElevate(e.target.value)}
+                    placeholder="Elevation..."
+                />
+                <input type="submit" value="Submit" className="btn btn-primary" />
+                </div>
+            </form>
     );
 }
 
