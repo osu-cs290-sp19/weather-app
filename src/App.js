@@ -22,14 +22,14 @@ function App() {
     var rhRequest = { dryBulb, wetBulb, elevate };
     //request to send to backend
     axios.get('http://localhost:3001/', { params: rhRequest})
-      .then(res => { setrhVal(res.data) })
+      .then(res => { console.log(res.data) })
       .catch(function (error) {
         // handle error
         console.log(error);
       });
 
     console.log(rhVal);
-    console.log("test");
+    // console.log("test");
     console.log(rhRequest);
   }
 
