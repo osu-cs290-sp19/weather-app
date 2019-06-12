@@ -25,6 +25,8 @@ rhRoutes.route('/').get(function(req, res){
     console.log(wet);
     let elevate = req.query.elevate;
     console.log(elevate);
+    let depression = dry - wet;
+    console.log(depression);
     
 });
 

@@ -29,7 +29,7 @@ function App() {
       });
 
     console.log(rhVal);
-    // console.log("test");
+    console.log("test");
     console.log(rhRequest);
   }
 
