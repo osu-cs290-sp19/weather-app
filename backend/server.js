@@ -23,14 +23,14 @@ rhRoutes.route('/').get(function(req, res){
     let dry = req.query.dryBulb;
     let wet = req.query.wetBulb;
     let elevate = req.query.elevate;
-    //set elevation for use as key
+    //calc wet bulb depression
+    let depression = dry - wet;
+    //set proper elevation
     if(elevate >= 1400 && elevate <= 4999){
         elevate = 1400;
     } else if (elevate >= 5000 && elevate <= 9200){
         elevate = 5000;
     }
-    //calc wet bulb depression
-    let depression = dry - wet;
     //this creates the key to be used in json query
     let key = elevate.toString() + "." 
                 + dry.toString() + "." 
