@@ -19,22 +19,26 @@ connection.once('open', function() {
 })
 
 rhRoutes.route('/').get(function(req, res){
+    /*
+    Could not sort data with sent functions so ignore
+    variables
+    */
+    let dry = req.query.dryBulb;
+    console.log(dry);
+    let wet = req.query.wetBulb;
+    console.log(wet);
+    let elevate = req.query.elevate;
+    console.log(elevate);
+    let depression = dry - wet;
+    console.log(depression);
+    //this returns the data from mongoDB to clientside
     weatherRH.find(function(err, rhVal){
         if(err){
             console.log(err);
         } else {
-            console.log(rhVal);
             res.json(rhVal);
         }
     })
-    // let dry = req.query.dryBulb;
-    // console.log(dry);
-    // let wet = req.query.wetBulb;
-    // console.log(wet);
-    // let elevate = req.query.elevate;
-    // console.log(elevate);
-    // let depression = dry - wet;
-    // console.log(depression);
     
 });
 

@@ -14,23 +14,22 @@ function App() {
   const [rhVal, setrhVal] = useState(11111);
 
   const getRH = (dryBulb, wetBulb, elevate) => {
-    /*
-    in this function we need to connect to the datastore somehow. 
-    Then will call some displayRH component when we have the value.
-    */
-    // var testVal = rh.rhCalc(dryBulb, wetBulb, elevate, parsedRhData1400, parsedRhData5000);
     var rhRequest = { dryBulb, wetBulb, elevate };
     //request to send to backend
     axios.get('http://localhost:3001/', { params: rhRequest})
-      .then(res => { console.log(res.data) })
+      .then(res => { 
+        rhValue(res.data, dryBulb, wetBulb, elevate); 
+      })
       .catch(function (error) {
         // handle error
         console.log(error);
       });
-
-    console.log(rhVal);
-    // console.log("test");
     console.log(rhRequest);
+  }
+
+  const rhValue = (resObject, dryBulb, wetBulb, elevate) => {
+    //write this function to get rh val from resObject
+    console.log(resObject);
   }
 
   return (
