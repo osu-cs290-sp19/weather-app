@@ -4,7 +4,8 @@ Import needed frameworks and components
 import React, { useState } from "react";
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom"; //routing
 import WeatherForm from './UserInput/WeatherForm.js'; //react component to get weather readings
 
 /*
@@ -37,9 +38,9 @@ function App() {
       elevate = 5000;
     }
     let obj0 = resObject[0];
-    try{
-    console.log(obj0[elevate][dryBulb][depression]);
-    setrhVal(obj0[elevate][dryBulb][depression]);
+    try {
+      console.log(obj0[elevate][dryBulb][depression]);
+      setrhVal(obj0[elevate][dryBulb][depression]);
     } catch (e) {
       alert("There is no RH value associated with your weather readings.. Try again.");
     }
@@ -47,16 +48,19 @@ function App() {
 
   return (
     <Router>
-      <div className="container">
-        <h2>Fire Weather App</h2>
-        <div>
-          <h3>Input Your Readings Here:</h3>
-          <div className="enter-bulbs-form">
-            <Route path="/" exact render={() => <WeatherForm getRH={getRH} />} />
+      <div className="page-width">
+        <div className="container">
+          <h2 className="app-header">Fire Weather App</h2>
+            <div className="input-wrapper">
+              <div className="enter-bulbs-form">
+                <Route path="/" exact render={() => <WeatherForm getRH={getRH} />} />
+              </div>
+            </div>
+            <div className="rh-wrapper">
+              <h3>RH: {rhVal}</h3>
+            </div>
           </div>
-          <h3>RH: {rhVal}</h3>
         </div>
-      </div>
     </Router>
   );
 }

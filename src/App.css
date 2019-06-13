@@ -2,3 +2,51 @@
   text-align: center;
 }
 
+.enter-bulbs-form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn.btn-primary {
+  margin: 10pt;
+}
+
+.form {
+  margin: auto;
+  /* float: left; */
+}
+
+.form-group {
+  margin: 10pt;
+  margin-left: auto;
+  margin-right: auto;
+  width: 160pt;
+  /* float: left; */
+}
+
+.page-width {
+  width: 100%;
+}
+
+.rh-wrapper {
+  margin: 20px;
+  text-align: center;
+  color: rgb(54, 54, 244);
+}
+
+.input-wrapper {
+  text-align:center;
+}
+
+.app-header {
+  margin: 10pt;
+  margin-bottom: 30pt;
+  text-align: center;
+  color: rgb(196, 42, 42);
+}
+
+.container {
+  vertical-align: middle;
+  align-content: center;
+}
+

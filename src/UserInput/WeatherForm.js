@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 /*
@@ -38,7 +39,7 @@ function WeatherForm({ getRH }) {
     This is the returned XML (not HTML but similar language)
     */
     return (
-            <form onSubmit={handleSubmit} className="form-inline">
+            <form onSubmit={handleSubmit} className="form">
                 <div className="form-group">
                 <input
                     type="number"
