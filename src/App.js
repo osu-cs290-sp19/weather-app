@@ -30,6 +30,7 @@ function App() {
   const rhValue = (resObject, dryBulb, wetBulb, elevate) => {
     //write this function to get rh val from resObject
     console.log(resObject);
+    // console.log("test");
   }
 
   return (

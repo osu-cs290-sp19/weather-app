@@ -19,20 +19,25 @@ connection.once('open', function() {
 })
 
 rhRoutes.route('/').get(function(req, res){
-    /*
-    Could not sort data with sent functions so ignore
-    variables
-    */
+    //set weather data values from request
     let dry = req.query.dryBulb;
-    console.log(dry);
     let wet = req.query.wetBulb;
-    console.log(wet);
     let elevate = req.query.elevate;
-    console.log(elevate);
+    //set elevation for use as key
+    if(elevate >= 1400 && elevate <= 4999){
+        elevate = 1400;
+    } else if (elevate >= 5000 && elevate <= 9200){
+        elevate = 5000;
+    }
+    //calc wet bulb depression
     let depression = dry - wet;
-    console.log(depression);
+    //this creates the key to be used in json query
+    let key = elevate.toString() + "." 
+                + dry.toString() + "." 
+                + depression.toString();
+    console.log(key);
     //this returns the data from mongoDB to clientside
-    weatherRH.find(function(err, rhVal){
+    weatherRH.find({[key]:{$gt:0}}, {[key]:1, _id:0},function(err, rhVal){
         if(err){
             console.log(err);
         } else {

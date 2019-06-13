@@ -69,7 +69,7 @@ function WeatherForm({ getRH }) {
                     onFocus={e => clearElevate(e.target.value)}
                     value={elevate}
                     onChange={e => setElevate(e.target.value)}
-                    placeholder="Elevation..."
+                    placeholder="Elevation... 1400-9200"
                 />
                 <input type="submit" value="Submit" className="btn btn-primary" />
                 </div>
